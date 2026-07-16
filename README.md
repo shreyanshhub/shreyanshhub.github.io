@@ -5,7 +5,7 @@ CSS for GitHub Pages.
 
 The public site is configured for:
 
-- `https://shreyanshpathak.tech`
-- GitHub repository: `shreyanshhub/portfolio`
+- `https://shreyanshhub.github.io`
+- GitHub repository: `shreyanshhub/shreyanshhub.github.io`
 
 No build step or framework is required.
