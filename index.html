@@ -5,38 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Shreyansh Pathak is a Ph.D. student at IIT Jodhpur researching machine unlearning, generative AI, and privacy-preserving machine learning."
+      content="shreyansh pathak is a ph.d. student at iit jodhpur researching machine unlearning, generative ai, and privacy-preserving machine learning."
     />
-    <meta name="author" content="Shreyansh Pathak" />
+    <meta name="author" content="shreyansh pathak" />
     <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Shreyansh Pathak" />
+    <meta property="og:title" content="shreyansh pathak" />
     <meta
       property="og:description"
-      content="Ph.D. student at IIT Jodhpur working on machine unlearning, generative AI, and privacy-preserving learning."
+      content="ph.d. student at iit jodhpur working on machine unlearning, generative ai, and privacy-preserving learning."
     />
     <meta property="og:url" content="https://shreyanshhub.github.io/" />
     <meta property="og:image" content="https://shreyanshhub.github.io/shreyansh-pathak.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shreyansh Pathak" />
+    <meta name="twitter:title" content="shreyansh pathak" />
     <meta
       name="twitter:description"
-      content="Machine Unlearning · Generative AI · IIT Jodhpur"
+      content="machine unlearning · generative ai · iit jodhpur"
     />
     <meta name="twitter:image" content="https://shreyanshhub.github.io/shreyansh-pathak.jpg" />
 
-    <title>Shreyansh Pathak</title>
+    <title>shreyansh pathak</title>
     <link rel="canonical" href="https://shreyanshhub.github.io/" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="site-name" href="#about">Shreyansh Pathak</a>
+        <a class="site-name" href="#about">shreyansh pathak</a>
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#research">Research</a>
@@ -51,7 +52,7 @@
     <main id="main" class="container">
       <section class="about" id="about">
         <div class="about-copy">
-          <h1>Shreyansh Pathak</h1>
+          <h1 data-type-on-scroll>shreyansh pathak</h1>
           <p class="subtitle">
             Ph.D. Student in Artificial Intelligence at
             <a href="https://www.iitj.ac.in/">IIT Jodhpur</a>
@@ -120,7 +121,7 @@
       </section>
 
       <section class="section" id="research">
-        <h2>Research</h2>
+        <h2 data-type-on-scroll>Research</h2>
         <p>
           My work asks how information can be selectively removed from a
           learned model while preserving useful knowledge. I study this problem
@@ -161,7 +162,7 @@
       </section>
 
       <section class="section" id="publications">
-        <h2>Publications</h2>
+        <h2 data-type-on-scroll>Publications</h2>
         <ol class="publication-list">
           <li>
             <p class="paper-title">
@@ -361,7 +362,7 @@
       </section>
 
       <section class="section" id="service">
-        <h2>Academic Service &amp; Selected Activities</h2>
+        <h2 data-type-on-scroll>Academic Service &amp; Selected Activities</h2>
        
         <div class="entries">
           <article>
@@ -444,6 +445,53 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      const typeTargets = document.querySelectorAll("[data-type-on-scroll]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const typeIn = (element) => {
+        if (element.dataset.typed) return;
+        const text = element.textContent.trim();
+        element.dataset.typed = "true";
+        element.setAttribute("aria-label", text);
+
+        if (reduceMotion) {
+          element.classList.add("is-typed");
+          return;
+        }
+
+        element.textContent = "";
+        element.classList.add("is-typing");
+        let index = 0;
+        const tick = () => {
+          element.textContent = text.slice(0, index);
+          index += 1;
+          if (index <= text.length) {
+            window.setTimeout(tick, 28);
+          } else {
+            element.classList.remove("is-typing");
+            element.classList.add("is-typed");
+          }
+        };
+        tick();
+      };
+
+      if (reduceMotion) {
+        typeTargets.forEach(typeIn);
+      } else {
+        const typeObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries
+              .filter((entry) => entry.isIntersecting)
+              .forEach((entry) => {
+                typeIn(entry.target);
+                observer.unobserve(entry.target);
+              });
+          },
+          { threshold: 0.45 }
+        );
+        typeTargets.forEach((element) => typeObserver.observe(element));
+      }
     </script>
   </body>
 </html>
