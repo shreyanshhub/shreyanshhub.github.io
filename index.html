@@ -30,7 +30,6 @@
     <link rel="canonical" href="https://shreyanshhub.github.io/" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
-    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -52,7 +51,7 @@
     <main id="main" class="container">
       <section class="about" id="about">
         <div class="about-copy">
-          <h1 data-type-on-scroll>shreyansh pathak</h1>
+          <h1>shreyansh pathak</h1>
           <p class="subtitle">
             Ph.D. Student in Artificial Intelligence at
             <a href="https://www.iitj.ac.in/">IIT Jodhpur</a>
@@ -61,7 +60,7 @@
           <div class="mobile-photo">
             <img
               src="shreyansh-pathak.jpg"
-              alt="Portrait of Shreyansh Pathak"
+              alt="portrait of shreyansh pathak"
               width="1079"
               height="1284"
             />
@@ -106,7 +105,7 @@
             >
             <a href="https://iab-rubric.org/people/phd">IAB Lab</a>
           </div>
-          <p class="maintenance-note">
+          <p>
             pardon me, i forget to update this page regularly.
           </p>
         </div>
@@ -114,7 +113,7 @@
         <aside class="profile" aria-label="Profile portrait">
           <img
             src="shreyansh-pathak.jpg"
-            alt="Portrait of Shreyansh Pathak"
+            alt="portrait of shreyansh pathak"
             width="1079"
             height="1284"
           />
@@ -124,7 +123,7 @@
       </section>
 
       <section class="section" id="research">
-        <h2 data-type-on-scroll>Research</h2>
+        <h2>research</h2>
         <p>
           My work asks how information can be selectively removed from a
           learned model while preserving useful knowledge. I study this problem
@@ -165,22 +164,24 @@
       </section>
 
       <section class="section" id="publications">
-        <h2 data-type-on-scroll>Publications</h2>
+        <h2>publications</h2>
         <ol class="publication-list">
           <li>
             <p class="paper-title">
-              Genµ 2.0: A Multimodal Challenge for Biometric Identity and Visual Concept Unlearning
+              Genμ 2.0: A Multimodal Challenge for Biometric Identity and Visual Concept Unlearning
             </p>
             <p>
-              <strong>Shreyansh Pathak</strong>,  Muskan Dosi, Chiranjeev Chiranjeev, Kartik Thakral, Mayank Vatsa, Richa Singh, Tal Hassner, Tamar Glaser, Iacopo Masi, Diego Garcia-Olano, Fahad Shamshad, Mohammed Talha Alam, Fakhri Karray, Karthik Nandakumar, Ashok Urlana, L D M S Sai Teja, Vivek Hruday Kavuri, Ponnurangam Kumaraguru
+              <strong>Shreyansh Pathak</strong>, Muskan Dosi, Chiranjeev Chiranjeev,
+              Kartik Thakral, Mayank Vatsa, Richa Singh, Tal Hassner, Tamar Glaser,
+              Iacopo Masi, Diego Garcia-Olano, Fahad Shamshad, Mohammed Talha Alam,
+              Fakhri Karray, Karthik Nandakumar, Ashok Urlana, L D M S Sai Teja,
+              Vivek Hruday Kavuri, Ponnurangam Kumaraguru
             </p>
             <p class="venue">
               IEEE/CVF European Conference on Computer Vision (ECCV), U and ME,
               (ECCVW), Malmo, Sweden, 2026
             </p>
-            <p>
-              <a href="https://openreview.net/forum?id=h99X4IEZfd">paper</a>
-            </p>
+            <p><a href="https://openreview.net/forum?id=h99X4IEZfd">paper</a></p>
           </li>
           <li>
             <p class="paper-title">
@@ -239,37 +240,12 @@
         <h2>Teaching &amp; Experience</h2>
         <div class="entries">
           <article>
-            <div class="entry-date">Winter 2026</div>
-            <div>
-              <h3>
-                Teaching Assistant — Machine Learning
-              </h3>
-              <p>IIT Jodhpur · Instructor: Dr. Richa Singh</p>
-            </div>
-          </article>
-          <article>
-            <div class="entry-date">Summer 2026</div>
-            <div>
-              <h3>
-                Teaching Assistant — Speech Understanding
-              </h3>
-              <p>IIT Jodhpur · Instructor: Dr. Richa Singh</p>
-            </div>
-          </article>
-          <article>
             <div class="entry-date">Winter 2025</div>
             <div>
               <h3>
                 Teaching Assistant — Pattern Recognition and Machine Learning
               </h3>
               <p>IIT Jodhpur · Instructor: Dr. Anand Mishra</p>
-            </div>
-          </article>
-          <article>
-            <div class="entry-date">Summer 2024</div>
-            <div>
-              <h3>Teaching Assistant — Autonomous Systems</h3>
-              <p>IIT Jodhpur · Instructor: Dr. Gaurav Harit</p>
             </div>
           </article>
           <article>
@@ -365,15 +341,8 @@
       </section>
 
       <section class="section" id="service">
-        <h2 data-type-on-scroll>Academic Service &amp; Selected Activities</h2>
-       
+        <h2>academic service &amp; selected activities</h2>
         <div class="entries">
-          <article>
-            <div class="entry-date">NA</div>
-            <div>
-              <h3>Served/Serving as a Reviewer at — AAAI 2027, AAAI 2026, ECCV U and Me 2026  </h3>
-            </div>
-          </article>
           <article>
             <div class="entry-date">2027</div>
             <div>
@@ -433,7 +402,6 @@
                 Shape Modelling Summer School.
               </p>
             </div>
-            
           </article>
         </div>
       </section>
@@ -446,55 +414,6 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      const typeTargets = document.querySelectorAll("[data-type-on-scroll]");
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      const typeIn = (element) => {
-        if (element.dataset.typed) return;
-        const text = element.textContent.trim();
-        element.dataset.typed = "true";
-        element.setAttribute("aria-label", text);
-
-        if (reduceMotion) {
-          element.classList.add("is-typed");
-          return;
-        }
-
-        element.textContent = "";
-        element.classList.add("is-typing");
-        let index = 0;
-        const tick = () => {
-          element.textContent = text.slice(0, index);
-          index += 1;
-          if (index <= text.length) {
-            window.setTimeout(tick, 28);
-          } else {
-            element.classList.remove("is-typing");
-            element.classList.add("is-typed");
-          }
-        };
-        tick();
-      };
-
-      if (reduceMotion) {
-        typeTargets.forEach(typeIn);
-      } else {
-        const typeObserver = new IntersectionObserver(
-          (entries, observer) => {
-            entries
-              .filter((entry) => entry.isIntersecting)
-              .forEach((entry) => {
-                typeIn(entry.target);
-                observer.unobserve(entry.target);
-              });
-          },
-          { threshold: 0.45 }
-        );
-        typeTargets.forEach((element) => typeObserver.observe(element));
-      }
-    </script>
   </body>
 </html>
+
